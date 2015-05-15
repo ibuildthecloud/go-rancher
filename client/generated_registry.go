@@ -52,6 +52,27 @@ type RegistryOperations interface {
 	Update(existing *Registry, updates interface{}) (*Registry, error)
 	ById(id string) (*Registry, error)
 	Delete(container *Registry) error
+    
+    ActionActivate (*Registry) (*StoragePool, error)
+    
+    
+    ActionCreate (*Registry) (*StoragePool, error)
+    
+    
+    ActionDeactivate (*Registry) (*StoragePool, error)
+    
+    
+    ActionPurge (*Registry) (*StoragePool, error)
+    
+    
+    ActionRemove (*Registry) (*StoragePool, error)
+    
+    
+    ActionRestore (*Registry) (*StoragePool, error)
+    
+    
+    ActionUpdate (*Registry) (*StoragePool, error)
+    
 }
 
 func newRegistryClient(rancherClient *RancherClient) *RegistryClient {
@@ -86,4 +107,67 @@ func (c *RegistryClient) ById(id string) (*Registry, error) {
 
 func (c *RegistryClient) Delete(container *Registry) error {
 	return c.rancherClient.doResourceDelete(REGISTRY_TYPE, &container.Resource)
+}
+    
+func (c *RegistryClient) ActionActivate (resource *Registry) (*StoragePool, error) {
+    
+	resp := &StoragePool{}
+    
+	err := c.rancherClient.doAction(REGISTRY_TYPE, "activate", &resource.Resource, nil, resp)
+    
+	return resp, err
+}
+    
+func (c *RegistryClient) ActionCreate (resource *Registry) (*StoragePool, error) {
+    
+	resp := &StoragePool{}
+    
+	err := c.rancherClient.doAction(REGISTRY_TYPE, "create", &resource.Resource, nil, resp)
+    
+	return resp, err
+}
+    
+func (c *RegistryClient) ActionDeactivate (resource *Registry) (*StoragePool, error) {
+    
+	resp := &StoragePool{}
+    
+	err := c.rancherClient.doAction(REGISTRY_TYPE, "deactivate", &resource.Resource, nil, resp)
+    
+	return resp, err
+}
+    
+func (c *RegistryClient) ActionPurge (resource *Registry) (*StoragePool, error) {
+    
+	resp := &StoragePool{}
+    
+	err := c.rancherClient.doAction(REGISTRY_TYPE, "purge", &resource.Resource, nil, resp)
+    
+	return resp, err
+}
+    
+func (c *RegistryClient) ActionRemove (resource *Registry) (*StoragePool, error) {
+    
+	resp := &StoragePool{}
+    
+	err := c.rancherClient.doAction(REGISTRY_TYPE, "remove", &resource.Resource, nil, resp)
+    
+	return resp, err
+}
+    
+func (c *RegistryClient) ActionRestore (resource *Registry) (*StoragePool, error) {
+    
+	resp := &StoragePool{}
+    
+	err := c.rancherClient.doAction(REGISTRY_TYPE, "restore", &resource.Resource, nil, resp)
+    
+	return resp, err
+}
+    
+func (c *RegistryClient) ActionUpdate (resource *Registry) (*StoragePool, error) {
+    
+	resp := &StoragePool{}
+    
+	err := c.rancherClient.doAction(REGISTRY_TYPE, "update", &resource.Resource, nil, resp)
+    
+	return resp, err
 }

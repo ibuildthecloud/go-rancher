@@ -58,6 +58,27 @@ type RegistryCredentialOperations interface {
 	Update(existing *RegistryCredential, updates interface{}) (*RegistryCredential, error)
 	ById(id string) (*RegistryCredential, error)
 	Delete(container *RegistryCredential) error
+    
+    ActionActivate (*RegistryCredential) (*Credential, error)
+    
+    
+    ActionCreate (*RegistryCredential) (*Credential, error)
+    
+    
+    ActionDeactivate (*RegistryCredential) (*Credential, error)
+    
+    
+    ActionPurge (*RegistryCredential) (*Credential, error)
+    
+    
+    ActionRemove (*RegistryCredential) (*Credential, error)
+    
+    
+    ActionRestore (*RegistryCredential) (*Credential, error)
+    
+    
+    ActionUpdate (*RegistryCredential) (*Credential, error)
+    
 }
 
 func newRegistryCredentialClient(rancherClient *RancherClient) *RegistryCredentialClient {
@@ -92,4 +113,67 @@ func (c *RegistryCredentialClient) ById(id string) (*RegistryCredential, error) 
 
 func (c *RegistryCredentialClient) Delete(container *RegistryCredential) error {
 	return c.rancherClient.doResourceDelete(REGISTRY_CREDENTIAL_TYPE, &container.Resource)
+}
+    
+func (c *RegistryCredentialClient) ActionActivate (resource *RegistryCredential) (*Credential, error) {
+    
+	resp := &Credential{}
+    
+	err := c.rancherClient.doAction(REGISTRY_CREDENTIAL_TYPE, "activate", &resource.Resource, nil, resp)
+    
+	return resp, err
+}
+    
+func (c *RegistryCredentialClient) ActionCreate (resource *RegistryCredential) (*Credential, error) {
+    
+	resp := &Credential{}
+    
+	err := c.rancherClient.doAction(REGISTRY_CREDENTIAL_TYPE, "create", &resource.Resource, nil, resp)
+    
+	return resp, err
+}
+    
+func (c *RegistryCredentialClient) ActionDeactivate (resource *RegistryCredential) (*Credential, error) {
+    
+	resp := &Credential{}
+    
+	err := c.rancherClient.doAction(REGISTRY_CREDENTIAL_TYPE, "deactivate", &resource.Resource, nil, resp)
+    
+	return resp, err
+}
+    
+func (c *RegistryCredentialClient) ActionPurge (resource *RegistryCredential) (*Credential, error) {
+    
+	resp := &Credential{}
+    
+	err := c.rancherClient.doAction(REGISTRY_CREDENTIAL_TYPE, "purge", &resource.Resource, nil, resp)
+    
+	return resp, err
+}
+    
+func (c *RegistryCredentialClient) ActionRemove (resource *RegistryCredential) (*Credential, error) {
+    
+	resp := &Credential{}
+    
+	err := c.rancherClient.doAction(REGISTRY_CREDENTIAL_TYPE, "remove", &resource.Resource, nil, resp)
+    
+	return resp, err
+}
+    
+func (c *RegistryCredentialClient) ActionRestore (resource *RegistryCredential) (*Credential, error) {
+    
+	resp := &Credential{}
+    
+	err := c.rancherClient.doAction(REGISTRY_CREDENTIAL_TYPE, "restore", &resource.Resource, nil, resp)
+    
+	return resp, err
+}
+    
+func (c *RegistryCredentialClient) ActionUpdate (resource *RegistryCredential) (*Credential, error) {
+    
+	resp := &Credential{}
+    
+	err := c.rancherClient.doAction(REGISTRY_CREDENTIAL_TYPE, "update", &resource.Resource, nil, resp)
+    
+	return resp, err
 }

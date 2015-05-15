@@ -60,6 +60,30 @@ type LoadBalancerServiceOperations interface {
 	Update(existing *LoadBalancerService, updates interface{}) (*LoadBalancerService, error)
 	ById(id string) (*LoadBalancerService, error)
 	Delete(container *LoadBalancerService) error
+    
+    ActionActivate (*LoadBalancerService) (*Service, error)
+    
+    
+    ActionAddservicelink (*LoadBalancerService, *AddRemoveServiceLinkInput) (*Service, error)
+    
+    
+    ActionCreate (*LoadBalancerService) (*Service, error)
+    
+    
+    ActionDeactivate (*LoadBalancerService) (*Service, error)
+    
+    
+    ActionRemove (*LoadBalancerService) (*Service, error)
+    
+    
+    ActionRemoveservicelink (*LoadBalancerService, *AddRemoveServiceLinkInput) (*Service, error)
+    
+    
+    ActionSetservicelinks (*LoadBalancerService, *SetServiceLinksInput) (*Service, error)
+    
+    
+    ActionUpdate (*LoadBalancerService) (*Service, error)
+    
 }
 
 func newLoadBalancerServiceClient(rancherClient *RancherClient) *LoadBalancerServiceClient {
@@ -94,4 +118,76 @@ func (c *LoadBalancerServiceClient) ById(id string) (*LoadBalancerService, error
 
 func (c *LoadBalancerServiceClient) Delete(container *LoadBalancerService) error {
 	return c.rancherClient.doResourceDelete(LOAD_BALANCER_SERVICE_TYPE, &container.Resource)
+}
+    
+func (c *LoadBalancerServiceClient) ActionActivate (resource *LoadBalancerService) (*Service, error) {
+    
+	resp := &Service{}
+    
+	err := c.rancherClient.doAction(LOAD_BALANCER_SERVICE_TYPE, "activate", &resource.Resource, nil, resp)
+    
+	return resp, err
+}
+    
+func (c *LoadBalancerServiceClient) ActionAddservicelink (resource *LoadBalancerService, input *AddRemoveServiceLinkInput) (*Service, error) {
+    
+	resp := &Service{}
+    
+	err := c.rancherClient.doAction(LOAD_BALANCER_SERVICE_TYPE, "addservicelink", &resource.Resource, input, resp)
+    
+	return resp, err
+}
+    
+func (c *LoadBalancerServiceClient) ActionCreate (resource *LoadBalancerService) (*Service, error) {
+    
+	resp := &Service{}
+    
+	err := c.rancherClient.doAction(LOAD_BALANCER_SERVICE_TYPE, "create", &resource.Resource, nil, resp)
+    
+	return resp, err
+}
+    
+func (c *LoadBalancerServiceClient) ActionDeactivate (resource *LoadBalancerService) (*Service, error) {
+    
+	resp := &Service{}
+    
+	err := c.rancherClient.doAction(LOAD_BALANCER_SERVICE_TYPE, "deactivate", &resource.Resource, nil, resp)
+    
+	return resp, err
+}
+    
+func (c *LoadBalancerServiceClient) ActionRemove (resource *LoadBalancerService) (*Service, error) {
+    
+	resp := &Service{}
+    
+	err := c.rancherClient.doAction(LOAD_BALANCER_SERVICE_TYPE, "remove", &resource.Resource, nil, resp)
+    
+	return resp, err
+}
+    
+func (c *LoadBalancerServiceClient) ActionRemoveservicelink (resource *LoadBalancerService, input *AddRemoveServiceLinkInput) (*Service, error) {
+    
+	resp := &Service{}
+    
+	err := c.rancherClient.doAction(LOAD_BALANCER_SERVICE_TYPE, "removeservicelink", &resource.Resource, input, resp)
+    
+	return resp, err
+}
+    
+func (c *LoadBalancerServiceClient) ActionSetservicelinks (resource *LoadBalancerService, input *SetServiceLinksInput) (*Service, error) {
+    
+	resp := &Service{}
+    
+	err := c.rancherClient.doAction(LOAD_BALANCER_SERVICE_TYPE, "setservicelinks", &resource.Resource, input, resp)
+    
+	return resp, err
+}
+    
+func (c *LoadBalancerServiceClient) ActionUpdate (resource *LoadBalancerService) (*Service, error) {
+    
+	resp := &Service{}
+    
+	err := c.rancherClient.doAction(LOAD_BALANCER_SERVICE_TYPE, "update", &resource.Resource, nil, resp)
+    
+	return resp, err
 }

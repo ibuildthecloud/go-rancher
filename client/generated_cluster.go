@@ -65,10 +65,37 @@ type ClusterOperations interface {
 	ById(id string) (*Cluster, error)
 	Delete(container *Cluster) error
     
+    ActionActivate (*Cluster) (*Host, error)
+    
+    
     ActionAddhost (*Cluster, *AddRemoveClusterHostInput) (*Cluster, error)
     
     
+    ActionAddlabel (*Cluster, *AddLabelInput) (*Host, error)
+    
+    
+    ActionCreate (*Cluster) (*Host, error)
+    
+    
+    ActionDeactivate (*Cluster) (*Host, error)
+    
+    
+    ActionPurge (*Cluster) (*Host, error)
+    
+    
+    ActionRemove (*Cluster) (*Host, error)
+    
+    
     ActionRemovehost (*Cluster, *AddRemoveClusterHostInput) (*Cluster, error)
+    
+    
+    ActionRemovelabel (*Cluster, *RemoveLabelInput) (*Host, error)
+    
+    
+    ActionRestore (*Cluster) (*Host, error)
+    
+    
+    ActionUpdate (*Cluster) (*Host, error)
     
 }
 
@@ -106,6 +133,15 @@ func (c *ClusterClient) Delete(container *Cluster) error {
 	return c.rancherClient.doResourceDelete(CLUSTER_TYPE, &container.Resource)
 }
     
+func (c *ClusterClient) ActionActivate (resource *Cluster) (*Host, error) {
+    
+	resp := &Host{}
+    
+	err := c.rancherClient.doAction(CLUSTER_TYPE, "activate", &resource.Resource, nil, resp)
+    
+	return resp, err
+}
+    
 func (c *ClusterClient) ActionAddhost (resource *Cluster, input *AddRemoveClusterHostInput) (*Cluster, error) {
     
 	resp := &Cluster{}
@@ -115,11 +151,83 @@ func (c *ClusterClient) ActionAddhost (resource *Cluster, input *AddRemoveCluste
 	return resp, err
 }
     
+func (c *ClusterClient) ActionAddlabel (resource *Cluster, input *AddLabelInput) (*Host, error) {
+    
+	resp := &Host{}
+    
+	err := c.rancherClient.doAction(CLUSTER_TYPE, "addlabel", &resource.Resource, input, resp)
+    
+	return resp, err
+}
+    
+func (c *ClusterClient) ActionCreate (resource *Cluster) (*Host, error) {
+    
+	resp := &Host{}
+    
+	err := c.rancherClient.doAction(CLUSTER_TYPE, "create", &resource.Resource, nil, resp)
+    
+	return resp, err
+}
+    
+func (c *ClusterClient) ActionDeactivate (resource *Cluster) (*Host, error) {
+    
+	resp := &Host{}
+    
+	err := c.rancherClient.doAction(CLUSTER_TYPE, "deactivate", &resource.Resource, nil, resp)
+    
+	return resp, err
+}
+    
+func (c *ClusterClient) ActionPurge (resource *Cluster) (*Host, error) {
+    
+	resp := &Host{}
+    
+	err := c.rancherClient.doAction(CLUSTER_TYPE, "purge", &resource.Resource, nil, resp)
+    
+	return resp, err
+}
+    
+func (c *ClusterClient) ActionRemove (resource *Cluster) (*Host, error) {
+    
+	resp := &Host{}
+    
+	err := c.rancherClient.doAction(CLUSTER_TYPE, "remove", &resource.Resource, nil, resp)
+    
+	return resp, err
+}
+    
 func (c *ClusterClient) ActionRemovehost (resource *Cluster, input *AddRemoveClusterHostInput) (*Cluster, error) {
     
 	resp := &Cluster{}
     
 	err := c.rancherClient.doAction(CLUSTER_TYPE, "removehost", &resource.Resource, input, resp)
+    
+	return resp, err
+}
+    
+func (c *ClusterClient) ActionRemovelabel (resource *Cluster, input *RemoveLabelInput) (*Host, error) {
+    
+	resp := &Host{}
+    
+	err := c.rancherClient.doAction(CLUSTER_TYPE, "removelabel", &resource.Resource, input, resp)
+    
+	return resp, err
+}
+    
+func (c *ClusterClient) ActionRestore (resource *Cluster) (*Host, error) {
+    
+	resp := &Host{}
+    
+	err := c.rancherClient.doAction(CLUSTER_TYPE, "restore", &resource.Resource, nil, resp)
+    
+	return resp, err
+}
+    
+func (c *ClusterClient) ActionUpdate (resource *Cluster) (*Host, error) {
+    
+	resp := &Host{}
+    
+	err := c.rancherClient.doAction(CLUSTER_TYPE, "update", &resource.Resource, nil, resp)
     
 	return resp, err
 }

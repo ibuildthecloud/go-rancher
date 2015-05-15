@@ -6,115 +6,114 @@ const (
 
 type Container struct {
 	Resource
-    
-    AccountId string `json:"accountId,omitempty"`
-    
-    AgentId string `json:"agentId,omitempty"`
-    
-    AllocationState string `json:"allocationState,omitempty"`
-    
-    CapAdd []string `json:"capAdd,omitempty"`
-    
-    CapDrop []string `json:"capDrop,omitempty"`
-    
-    Command []string `json:"command,omitempty"`
-    
-    Count int `json:"count,omitempty"`
-    
-    CpuSet string `json:"cpuSet,omitempty"`
-    
-    CpuShares int `json:"cpuShares,omitempty"`
-    
-    Created string `json:"created,omitempty"`
-    
-    Data map[string]interface{} `json:"data,omitempty"`
-    
-    DataVolumes []string `json:"dataVolumes,omitempty"`
-    
-    DataVolumesFrom []string `json:"dataVolumesFrom,omitempty"`
-    
-    Description string `json:"description,omitempty"`
-    
-    Devices []string `json:"devices,omitempty"`
-    
-    Directory string `json:"directory,omitempty"`
-    
-    Dns []string `json:"dns,omitempty"`
-    
-    DnsSearch []string `json:"dnsSearch,omitempty"`
-    
-    DomainName string `json:"domainName,omitempty"`
-    
-    EntryPoint []string `json:"entryPoint,omitempty"`
-    
-    Environment map[string]interface{} `json:"environment,omitempty"`
-    
-    ExternalId string `json:"externalId,omitempty"`
-    
-    FirstRunning string `json:"firstRunning,omitempty"`
-    
-    Hostname string `json:"hostname,omitempty"`
-    
-    ImageUuid string `json:"imageUuid,omitempty"`
-    
-    InstanceLinks map[string]interface{} `json:"instanceLinks,omitempty"`
-    
-    Kind string `json:"kind,omitempty"`
-    
-    Labels map[string]interface{} `json:"labels,omitempty"`
-    
-    LxcConf map[string]interface{} `json:"lxcConf,omitempty"`
-    
-    Memory int `json:"memory,omitempty"`
-    
-    MemorySwap int `json:"memorySwap,omitempty"`
-    
-    Name string `json:"name,omitempty"`
-    
-    NativeContainer bool `json:"nativeContainer,omitempty"`
-    
-    NetworkIds []string `json:"networkIds,omitempty"`
-    
-    Ports []string `json:"ports,omitempty"`
-    
-    PrimaryIpAddress string `json:"primaryIpAddress,omitempty"`
-    
-    Privileged bool `json:"privileged,omitempty"`
-    
-    PublishAllPorts bool `json:"publishAllPorts,omitempty"`
-    
-    RegistryCredentialId string `json:"registryCredentialId,omitempty"`
-    
-    RemoveTime string `json:"removeTime,omitempty"`
-    
-    Removed string `json:"removed,omitempty"`
-    
-    RequestedHostId string `json:"requestedHostId,omitempty"`
-    
-    RestartPolicy *RestartPolicy `json:"restartPolicy,omitempty"`
-    
-    StartOnCreate bool `json:"startOnCreate,omitempty"`
-    
-    State string `json:"state,omitempty"`
-    
-    StdinOpen bool `json:"stdinOpen,omitempty"`
-    
-    SystemContainer string `json:"systemContainer,omitempty"`
-    
-    Token string `json:"token,omitempty"`
-    
-    Transitioning string `json:"transitioning,omitempty"`
-    
-    TransitioningMessage string `json:"transitioningMessage,omitempty"`
-    
-    TransitioningProgress int `json:"transitioningProgress,omitempty"`
-    
-    Tty bool `json:"tty,omitempty"`
-    
-    User string `json:"user,omitempty"`
-    
-    Uuid string `json:"uuid,omitempty"`
-    
+
+	AccountId string `json:"accountId,omitempty"`
+
+	AgentId string `json:"agentId,omitempty"`
+
+	AllocationState string `json:"allocationState,omitempty"`
+
+	CapAdd []string `json:"capAdd,omitempty"`
+
+	CapDrop []string `json:"capDrop,omitempty"`
+
+	Command []string `json:"command,omitempty"`
+
+	Count int `json:"count,omitempty"`
+
+	CpuSet string `json:"cpuSet,omitempty"`
+
+	CpuShares int `json:"cpuShares,omitempty"`
+
+	Created string `json:"created,omitempty"`
+
+	Data map[string]interface{} `json:"data,omitempty"`
+
+	DataVolumes []string `json:"dataVolumes,omitempty"`
+
+	DataVolumesFrom []string `json:"dataVolumesFrom,omitempty"`
+
+	Description string `json:"description,omitempty"`
+
+	Devices []string `json:"devices,omitempty"`
+
+	Directory string `json:"directory,omitempty"`
+
+	Dns []string `json:"dns,omitempty"`
+
+	DnsSearch []string `json:"dnsSearch,omitempty"`
+
+	DomainName string `json:"domainName,omitempty"`
+
+	EntryPoint []string `json:"entryPoint,omitempty"`
+
+	Environment map[string]interface{} `json:"environment,omitempty"`
+
+	ExternalId string `json:"externalId,omitempty"`
+
+	FirstRunning string `json:"firstRunning,omitempty"`
+
+	Hostname string `json:"hostname,omitempty"`
+
+	ImageUuid string `json:"imageUuid,omitempty"`
+
+	InstanceLinks map[string]interface{} `json:"instanceLinks,omitempty"`
+
+	Kind string `json:"kind,omitempty"`
+
+	Labels map[string]interface{} `json:"labels,omitempty"`
+
+	LxcConf map[string]interface{} `json:"lxcConf,omitempty"`
+
+	Memory int `json:"memory,omitempty"`
+
+	MemorySwap int `json:"memorySwap,omitempty"`
+
+	Name string `json:"name,omitempty"`
+
+	NativeContainer bool `json:"nativeContainer,omitempty"`
+
+	NetworkIds []string `json:"networkIds,omitempty"`
+
+	Ports []string `json:"ports,omitempty"`
+
+	PrimaryIpAddress string `json:"primaryIpAddress,omitempty"`
+
+	Privileged bool `json:"privileged,omitempty"`
+
+	PublishAllPorts bool `json:"publishAllPorts,omitempty"`
+
+	RegistryCredentialId string `json:"registryCredentialId,omitempty"`
+
+	RemoveTime string `json:"removeTime,omitempty"`
+
+	Removed string `json:"removed,omitempty"`
+
+	RequestedHostId string `json:"requestedHostId,omitempty"`
+
+	RestartPolicy *RestartPolicy `json:"restartPolicy,omitempty"`
+
+	StartOnCreate bool `json:"startOnCreate,omitempty"`
+
+	State string `json:"state,omitempty"`
+
+	StdinOpen bool `json:"stdinOpen,omitempty"`
+
+	SystemContainer string `json:"systemContainer,omitempty"`
+
+	Token string `json:"token,omitempty"`
+
+	Transitioning string `json:"transitioning,omitempty"`
+
+	TransitioningMessage string `json:"transitioningMessage,omitempty"`
+
+	TransitioningProgress int `json:"transitioningProgress,omitempty"`
+
+	Tty bool `json:"tty,omitempty"`
+
+	User string `json:"user,omitempty"`
+
+	Uuid string `json:"uuid,omitempty"`
 }
 
 type ContainerCollection struct {
@@ -132,12 +131,38 @@ type ContainerOperations interface {
 	Update(existing *Container, updates interface{}) (*Container, error)
 	ById(id string) (*Container, error)
 	Delete(container *Container) error
-    
-    ActionAddlabel (*Container, *AddLabelInput) (*Container, error)
-    
-    
-    ActionRemovelabel (*Container, *RemoveLabelInput) (*Container, error)
-    
+
+	ActionAddlabel(*Container, *AddLabelInput) (*Container, error)
+
+	ActionAllocate(*Container) (*Instance, error)
+
+	ActionConsole(*Container, *InstanceConsoleInput) (*InstanceConsole, error)
+
+	ActionCreate(*Container) (*Instance, error)
+
+	ActionDeallocate(*Container) (*Instance, error)
+
+	ActionExecute(*Container, *ContainerExec) (*HostAccess, error)
+
+	ActionLogs(*Container, *ContainerLogs) (*HostAccess, error)
+
+	ActionMigrate(*Container) (*Instance, error)
+
+	ActionPurge(*Container) (*Instance, error)
+
+	ActionRemove(*Container) (*Instance, error)
+
+	ActionRemovelabel(*Container, *RemoveLabelInput) (*Container, error)
+
+	ActionRestart(*Container) (*Instance, error)
+
+	ActionRestore(*Container) (*Instance, error)
+
+	ActionStart(*Container) (*Instance, error)
+
+	ActionStop(*Container, *InstanceStop) (*Instance, error)
+
+	ActionUpdate(*Container) (*Instance, error)
 }
 
 func newContainerClient(rancherClient *RancherClient) *ContainerClient {
@@ -173,21 +198,147 @@ func (c *ContainerClient) ById(id string) (*Container, error) {
 func (c *ContainerClient) Delete(container *Container) error {
 	return c.rancherClient.doResourceDelete(CONTAINER_TYPE, &container.Resource)
 }
-    
-func (c *ContainerClient) ActionAddlabel (resource *Container, input *AddLabelInput) (*Container, error) {
-    
+
+func (c *ContainerClient) ActionAddlabel(resource *Container, input *AddLabelInput) (*Container, error) {
+
 	resp := &Container{}
-    
+
 	err := c.rancherClient.doAction(CONTAINER_TYPE, "addlabel", &resource.Resource, input, resp)
-    
+
 	return resp, err
 }
-    
-func (c *ContainerClient) ActionRemovelabel (resource *Container, input *RemoveLabelInput) (*Container, error) {
-    
+
+func (c *ContainerClient) ActionAllocate(resource *Container) (*Instance, error) {
+
+	resp := &Instance{}
+
+	err := c.rancherClient.doAction(CONTAINER_TYPE, "allocate", &resource.Resource, nil, resp)
+
+	return resp, err
+}
+
+func (c *ContainerClient) ActionConsole(resource *Container, input *InstanceConsoleInput) (*InstanceConsole, error) {
+
+	resp := &InstanceConsole{}
+
+	err := c.rancherClient.doAction(CONTAINER_TYPE, "console", &resource.Resource, input, resp)
+
+	return resp, err
+}
+
+func (c *ContainerClient) ActionCreate(resource *Container) (*Instance, error) {
+
+	resp := &Instance{}
+
+	err := c.rancherClient.doAction(CONTAINER_TYPE, "create", &resource.Resource, nil, resp)
+
+	return resp, err
+}
+
+func (c *ContainerClient) ActionDeallocate(resource *Container) (*Instance, error) {
+
+	resp := &Instance{}
+
+	err := c.rancherClient.doAction(CONTAINER_TYPE, "deallocate", &resource.Resource, nil, resp)
+
+	return resp, err
+}
+
+func (c *ContainerClient) ActionExecute(resource *Container, input *ContainerExec) (*HostAccess, error) {
+
+	resp := &HostAccess{}
+
+	err := c.rancherClient.doAction(CONTAINER_TYPE, "execute", &resource.Resource, input, resp)
+
+	return resp, err
+}
+
+func (c *ContainerClient) ActionLogs(resource *Container, input *ContainerLogs) (*HostAccess, error) {
+
+	resp := &HostAccess{}
+
+	err := c.rancherClient.doAction(CONTAINER_TYPE, "logs", &resource.Resource, input, resp)
+
+	return resp, err
+}
+
+func (c *ContainerClient) ActionMigrate(resource *Container) (*Instance, error) {
+
+	resp := &Instance{}
+
+	err := c.rancherClient.doAction(CONTAINER_TYPE, "migrate", &resource.Resource, nil, resp)
+
+	return resp, err
+}
+
+func (c *ContainerClient) ActionPurge(resource *Container) (*Instance, error) {
+
+	resp := &Instance{}
+
+	err := c.rancherClient.doAction(CONTAINER_TYPE, "purge", &resource.Resource, nil, resp)
+
+	return resp, err
+}
+
+func (c *ContainerClient) ActionRemove(resource *Container) (*Instance, error) {
+
+	resp := &Instance{}
+
+	err := c.rancherClient.doAction(CONTAINER_TYPE, "remove", &resource.Resource, nil, resp)
+
+	return resp, err
+}
+
+func (c *ContainerClient) ActionRemovelabel(resource *Container, input *RemoveLabelInput) (*Container, error) {
+
 	resp := &Container{}
-    
+
 	err := c.rancherClient.doAction(CONTAINER_TYPE, "removelabel", &resource.Resource, input, resp)
-    
+
+	return resp, err
+}
+
+func (c *ContainerClient) ActionRestart(resource *Container) (*Instance, error) {
+
+	resp := &Instance{}
+
+	err := c.rancherClient.doAction(CONTAINER_TYPE, "restart", &resource.Resource, nil, resp)
+
+	return resp, err
+}
+
+func (c *ContainerClient) ActionRestore(resource *Container) (*Instance, error) {
+
+	resp := &Instance{}
+
+	err := c.rancherClient.doAction(CONTAINER_TYPE, "restore", &resource.Resource, nil, resp)
+
+	return resp, err
+}
+
+func (c *ContainerClient) ActionStart(resource *Container) (*Instance, error) {
+
+	resp := &Instance{}
+
+	err := c.rancherClient.doAction(CONTAINER_TYPE, "start", &resource.Resource, nil, resp)
+
+	return resp, err
+}
+
+func (c *ContainerClient) ActionStop(resource *Container, input *InstanceStop) (*Instance, error) {
+
+	resp := &Instance{}
+
+	err := c.rancherClient.doAction(CONTAINER_TYPE, "stop", &resource.Resource, input, resp)
+
+	return resp, err
+}
+
+func (c *ContainerClient) ActionUpdate(resource *Container) (*Instance, error) {
+
+	resp := &Instance{}
+
+	err := c.rancherClient.doAction(CONTAINER_TYPE, "update", &resource.Resource, nil, resp)
+
 	return resp, err
 }

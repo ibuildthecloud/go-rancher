@@ -208,6 +208,13 @@ func generateFiles() error {
 		}
 
 		schemaExists[schema.Id] = true
+	}
+
+	for _, schema := range schemas.Data {
+		if _, ok := blackListTypes[schema.Id]; ok {
+			continue
+		}
+
 		err = generateType(schema)
 		if err != nil {
 			return err
