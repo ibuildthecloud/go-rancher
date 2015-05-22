@@ -7,51 +7,51 @@ const (
 type Machine struct {
 	Resource
     
-    AccountId string `json:"accountId,omitempty"`
+    AccountId string `json:"accountId,omitempty",yaml:"account_id,omitempty"`
     
-    Amazonec2Config *Amazonec2Config `json:"amazonec2Config,omitempty"`
+    Amazonec2Config *Amazonec2Config `json:"amazonec2Config,omitempty",yaml:"amazonec2config,omitempty"`
     
-    AuthCertificateAuthority string `json:"authCertificateAuthority,omitempty"`
+    AuthCertificateAuthority string `json:"authCertificateAuthority,omitempty",yaml:"auth_certificate_authority,omitempty"`
     
-    AuthKey string `json:"authKey,omitempty"`
+    AuthKey string `json:"authKey,omitempty",yaml:"auth_key,omitempty"`
     
-    Created string `json:"created,omitempty"`
+    Created string `json:"created,omitempty",yaml:"created,omitempty"`
     
-    Data map[string]interface{} `json:"data,omitempty"`
+    Data map[string]interface{} `json:"data,omitempty",yaml:"data,omitempty"`
     
-    Description string `json:"description,omitempty"`
+    Description string `json:"description,omitempty",yaml:"description,omitempty"`
     
-    DigitaloceanConfig *DigitaloceanConfig `json:"digitaloceanConfig,omitempty"`
+    DigitaloceanConfig *DigitaloceanConfig `json:"digitaloceanConfig,omitempty",yaml:"digitalocean_config,omitempty"`
     
-    Driver string `json:"driver,omitempty"`
+    Driver string `json:"driver,omitempty",yaml:"driver,omitempty"`
     
-    ExternalId string `json:"externalId,omitempty"`
+    ExternalId string `json:"externalId,omitempty",yaml:"external_id,omitempty"`
     
-    ExtractedConfig string `json:"extractedConfig,omitempty"`
+    ExtractedConfig string `json:"extractedConfig,omitempty",yaml:"extracted_config,omitempty"`
     
-    Kind string `json:"kind,omitempty"`
+    Kind string `json:"kind,omitempty",yaml:"kind,omitempty"`
     
-    Name string `json:"name,omitempty"`
+    Name string `json:"name,omitempty",yaml:"name,omitempty"`
     
-    PacketConfig *PacketConfig `json:"packetConfig,omitempty"`
+    PacketConfig *PacketConfig `json:"packetConfig,omitempty",yaml:"packet_config,omitempty"`
     
-    RackspaceConfig *RackspaceConfig `json:"rackspaceConfig,omitempty"`
+    RackspaceConfig *RackspaceConfig `json:"rackspaceConfig,omitempty",yaml:"rackspace_config,omitempty"`
     
-    RemoveTime string `json:"removeTime,omitempty"`
+    RemoveTime string `json:"removeTime,omitempty",yaml:"remove_time,omitempty"`
     
-    Removed string `json:"removed,omitempty"`
+    Removed string `json:"removed,omitempty",yaml:"removed,omitempty"`
     
-    State string `json:"state,omitempty"`
+    State string `json:"state,omitempty",yaml:"state,omitempty"`
     
-    Transitioning string `json:"transitioning,omitempty"`
+    Transitioning string `json:"transitioning,omitempty",yaml:"transitioning,omitempty"`
     
-    TransitioningMessage string `json:"transitioningMessage,omitempty"`
+    TransitioningMessage string `json:"transitioningMessage,omitempty",yaml:"transitioning_message,omitempty"`
     
-    TransitioningProgress int `json:"transitioningProgress,omitempty"`
+    TransitioningProgress int `json:"transitioningProgress,omitempty",yaml:"transitioning_progress,omitempty"`
     
-    Uuid string `json:"uuid,omitempty"`
+    Uuid string `json:"uuid,omitempty",yaml:"uuid,omitempty"`
     
-    VirtualboxConfig *VirtualboxConfig `json:"virtualboxConfig,omitempty"`
+    VirtualboxConfig *VirtualboxConfig `json:"virtualboxConfig,omitempty",yaml:"virtualbox_config,omitempty"`
     
 }
 

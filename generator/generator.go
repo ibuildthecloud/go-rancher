@@ -120,9 +120,10 @@ func generateType(schema client.Schema) error {
 	}
 
 	funcMap := template.FuncMap{
-		"toLowerCamelCase": ToLowerCamelCase,
-		"capitalize":       capitalize,
-		"upper":            strings.ToUpper,
+		"toLowerCamelCase":  ToLowerCamelCase,
+		"toLowerUnderscore": addUnderscore,
+		"capitalize":        capitalize,
+		"upper":             strings.ToUpper,
 	}
 
 	typeTemplate, err := template.New("type.template").Funcs(funcMap).ParseFiles("type.template")
@@ -138,7 +139,7 @@ func ToLowerCamelCase(input string) string {
 }
 
 func addUnderscore(input string) string {
-	return underscoreRegexp.ReplaceAllString(input, `${1}_${2}`)
+	return strings.ToLower(underscoreRegexp.ReplaceAllString(input, `${1}_${2}`))
 }
 
 func generateClient(schema []client.Schema) error {

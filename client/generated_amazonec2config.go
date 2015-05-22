@@ -7,29 +7,29 @@ const (
 type Amazonec2Config struct {
 	Resource
     
-    AccessKey string `json:"accessKey,omitempty"`
+    AccessKey string `json:"accessKey,omitempty",yaml:"access_key,omitempty"`
     
-    Ami string `json:"ami,omitempty"`
+    Ami string `json:"ami,omitempty",yaml:"ami,omitempty"`
     
-    IamInstanceProfile string `json:"iamInstanceProfile,omitempty"`
+    IamInstanceProfile string `json:"iamInstanceProfile,omitempty",yaml:"iam_instance_profile,omitempty"`
     
-    InstanceType string `json:"instanceType,omitempty"`
+    InstanceType string `json:"instanceType,omitempty",yaml:"instance_type,omitempty"`
     
-    Region string `json:"region,omitempty"`
+    Region string `json:"region,omitempty",yaml:"region,omitempty"`
     
-    RootSize string `json:"rootSize,omitempty"`
+    RootSize string `json:"rootSize,omitempty",yaml:"root_size,omitempty"`
     
-    SecretKey string `json:"secretKey,omitempty"`
+    SecretKey string `json:"secretKey,omitempty",yaml:"secret_key,omitempty"`
     
-    SecurityGroup string `json:"securityGroup,omitempty"`
+    SecurityGroup string `json:"securityGroup,omitempty",yaml:"security_group,omitempty"`
     
-    SessionToken string `json:"sessionToken,omitempty"`
+    SessionToken string `json:"sessionToken,omitempty",yaml:"session_token,omitempty"`
     
-    SubnetId string `json:"subnetId,omitempty"`
+    SubnetId string `json:"subnetId,omitempty",yaml:"subnet_id,omitempty"`
     
-    VpcId string `json:"vpcId,omitempty"`
+    VpcId string `json:"vpcId,omitempty",yaml:"vpc_id,omitempty"`
     
-    Zone string `json:"zone,omitempty"`
+    Zone string `json:"zone,omitempty",yaml:"zone,omitempty"`
     
 }
 

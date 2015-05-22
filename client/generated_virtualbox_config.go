@@ -7,11 +7,11 @@ const (
 type VirtualboxConfig struct {
 	Resource
     
-    Boot2dockerUrl string `json:"boot2dockerUrl,omitempty"`
+    Boot2dockerUrl string `json:"boot2dockerUrl,omitempty",yaml:"boot2docker_url,omitempty"`
     
-    DiskSize string `json:"diskSize,omitempty"`
+    DiskSize string `json:"diskSize,omitempty",yaml:"disk_size,omitempty"`
     
-    Memory string `json:"memory,omitempty"`
+    Memory string `json:"memory,omitempty",yaml:"memory,omitempty"`
     
 }
 

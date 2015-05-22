@@ -1,13 +1,16 @@
-package client
+package hostaccess
 
 import (
 	"fmt"
 
 	"github.com/gorilla/websocket"
+	"github.com/rancherio/go-rancher/client"
 )
 
-func (c *RancherClient) GetHostAccess(resource Resource, action string, input interface{}) (*websocket.Conn, error) {
-	var resp HostAccess
+type RancherWebsocketClient client.RancherClient
+
+func (c *RancherWebsocketClient) GetHostAccess(resource client.Resource, action string, input interface{}) (*websocket.Conn, error) {
+	var resp client.HostAccess
 	url := resource.Actions[action]
 	if url == "" {
 		return nil, fmt.Errorf("Failed to find action: %s", action)

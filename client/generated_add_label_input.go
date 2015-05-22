@@ -7,9 +7,9 @@ const (
 type AddLabelInput struct {
 	Resource
     
-    Key string `json:"key,omitempty"`
+    Key string `json:"key,omitempty",yaml:"key,omitempty"`
     
-    Value string `json:"value,omitempty"`
+    Value string `json:"value,omitempty",yaml:"value,omitempty"`
     
 }
 

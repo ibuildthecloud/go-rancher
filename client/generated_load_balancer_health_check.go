@@ -7,17 +7,17 @@ const (
 type LoadBalancerHealthCheck struct {
 	Resource
     
-    HealthyThreshold int `json:"healthyThreshold,omitempty"`
+    HealthyThreshold int `json:"healthyThreshold,omitempty",yaml:"healthy_threshold,omitempty"`
     
-    Interval int `json:"interval,omitempty"`
+    Interval int `json:"interval,omitempty",yaml:"interval,omitempty"`
     
-    Name string `json:"name,omitempty"`
+    Name string `json:"name,omitempty",yaml:"name,omitempty"`
     
-    RequestLine string `json:"requestLine,omitempty"`
+    RequestLine string `json:"requestLine,omitempty",yaml:"request_line,omitempty"`
     
-    ResponseTimeout int `json:"responseTimeout,omitempty"`
+    ResponseTimeout int `json:"responseTimeout,omitempty",yaml:"response_timeout,omitempty"`
     
-    UnhealthyThreshold int `json:"unhealthyThreshold,omitempty"`
+    UnhealthyThreshold int `json:"unhealthyThreshold,omitempty",yaml:"unhealthy_threshold,omitempty"`
     
 }
 

@@ -7,9 +7,9 @@ const (
 type RestartPolicy struct {
 	Resource
     
-    MaximumRetryCount int `json:"maximumRetryCount,omitempty"`
+    MaximumRetryCount int `json:"maximumRetryCount,omitempty",yaml:"maximum_retry_count,omitempty"`
     
-    Name string `json:"name,omitempty"`
+    Name string `json:"name,omitempty",yaml:"name,omitempty"`
     
 }
 
